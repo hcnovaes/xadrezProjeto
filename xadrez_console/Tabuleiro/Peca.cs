@@ -19,10 +19,12 @@ namespace tabuleiro
             this.qteMovimentos = 0;
         }
 
+
+
         public bool existeMovimentosPossiveis()
         {
             bool[,] mat = movimentosPossiveis();
-            for(int i = 0; i<tab.linhas; i++)
+            for (int i = 0; i < tab.linhas; i++)
             {
                 for (int j = 0; j < tab.linhas; j++)
                 {
@@ -35,7 +37,7 @@ namespace tabuleiro
             return false;
         }
 
-        public bool podeMoverPara (Posicao pos)
+        public bool movimentoPossivel(Posicao pos)
         {
             return movimentosPossiveis()[pos.linha, pos.coluna];
         }
