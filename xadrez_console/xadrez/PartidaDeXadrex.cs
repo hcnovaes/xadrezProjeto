@@ -155,9 +155,47 @@ namespace xadrez
                 {
                     p = tab.retirarPeca(destino);
                     pecas.Remove(p);
-                    Peca dama = new Dama(tab, p.cor);
-                    tab.colocarPeca(dama, destino);
-                    pecas.Add(dama);
+                    bool foiPromovido = false;
+                    Console.WriteLine("Informe a peça desejada (D, T, B, C): ");
+                    while (foiPromovido == false) {
+                        string promovida = Console.ReadLine();
+                        if (promovida == "C")
+                        {
+                            Peca cavalo = new Cavalo(tab, p.cor);
+                            tab.colocarPeca(cavalo, destino);
+                            pecas.Add(cavalo);
+                            foiPromovido = true;
+                        }
+                        else if (promovida == "D")
+                        {
+                            Peca dama = new Dama(tab, p.cor);
+                            tab.colocarPeca(dama, destino);
+                            pecas.Add(dama);
+                            foiPromovido = true;
+                        }
+                        else if (promovida == "T")
+                        {
+                            Peca torre = new Torre(tab, p.cor);
+                            tab.colocarPeca(torre, destino);
+                            pecas.Add(torre);
+                            foiPromovido = true;
+                        }
+                        else if (promovida == "B")
+                        {
+                            Peca bispo = new Bispo(tab, p.cor);
+                            tab.colocarPeca(bispo, destino);
+                            pecas.Add(bispo);
+                            foiPromovido = true;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Peça informada não é válida");
+                            Console.WriteLine("Informe a peça desejada (D, T, B, C): ");
+                            promovida = Console.ReadLine();
+                            foiPromovido = false;
+                        }
+                    }
+
                 }
             }
 

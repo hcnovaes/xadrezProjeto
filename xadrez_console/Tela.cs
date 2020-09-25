@@ -22,7 +22,6 @@ namespace xadrez_console
             Console.WriteLine("  a b c d e f g h");
         }
 
-
         public static void imprimirPartida(PartidaDeXadrex partida)
         {
             imprimirTabuleiro(partida.tab);
@@ -105,7 +104,7 @@ namespace xadrez_console
 
             return new PosicaoXadrez(coluna, linha);
         }
-
+         
         public static void imprimirPeca(Peca peca)
         {
             if (peca == null)
